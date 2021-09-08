@@ -15,6 +15,11 @@ If we want to build any app the two most important thing to think about is Data 
 For each different ways of creating object write different solutions.
 
 - Without Object
+
+```js
+let data = {};
+```
+
 - Organize using object
 - Use a function to create object
 - Convert the function to use `this` keyword
@@ -24,8 +29,8 @@ For each different ways of creating object write different solutions.
 
 ```js
 const testData = {
-  title: 'Where is the capital of Jordan',
-  options: ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'],
+  title: "Where is the capital of Jordan",
+  options: ["Tashkent", "Amaan", "Kuwait City", "Nairobi"],
   correctAnswerIndex: 1,
 };
 ```
