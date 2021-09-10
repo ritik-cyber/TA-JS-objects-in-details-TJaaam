@@ -20,6 +20,15 @@
 
 - Check the `isEqual` method and pass the two instance you created above.
 
+```js
+class square {
+  constructor(side) {
+    this.width = width;
+    this.height = height;
+  }
+}
+```
+
 ## User Class
 
 - Create a `User` class that accepts `firstName` and `lastName` property
