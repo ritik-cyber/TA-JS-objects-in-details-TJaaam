@@ -18,18 +18,21 @@
 
 // 10. Try calling `personOne.sayHello()` and `personTwo.sayHello()`. Check if you get the required output.
 
-let userMethod = {
-  sayHello: function () {
-    alert("welocme");
-  },
-};
+// CreateUser.prototype = {
+//   sayHello: function () {
+//     alert(`hello ${this.name}`);
+//   },
+// };
 
-function createUser(name, age) {
-  let user = Object.create(userMethod);
-  user.name = name;
-  user.age = age;
-  return user;
+class user {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  sayHello() {
+    alert(`hello ${this.name}`);
+  }
 }
 
-let personOne = createUser("ritik", 21);
-let personTwo = createUser("arya", 11);
+let personOne = new user("ritik", 21);
+let personTwo = new user("arya", 11);
