@@ -11,20 +11,20 @@ let animalMethod = {
   },
 };
 
-function animal(location, noOfLegs) {
-  let user = Object.create(animalMethod);
-  user.location = location;
-  user.noOfLegs = noOfLegs;
-  return user;
+function createAnimal(location, noOfLegs) {
+  let obj = Object.create(animalMethod);
+  obj.location = location;
+  obj.noOfLegs = noOfLegs;
+  return obj;
 }
 
-function dog(name, color) {
-  let user = Object.create(dogMethod);
-  user.name = name;
-  user.color = color;
-  return user;
+function createDog(location, noOfLegs, name, color) {
+  let obj = createAnimal(location, noOfLegs);
+  Object.setPrototypeOf(obj, dogMethod);
+  obj.name = name;
+  obj.color = color;
+  return obj;
 }
-Object.setPrototypeOf(animalMethod, dogMethod);
 
 let dogMethod = {
   bark: function () {
@@ -42,6 +42,32 @@ let dogMethod = {
     return `I am ${this.name} and I am of ${this.color} color. I can also bark`;
   },
 };
+Object.setPrototypeOf(dogMethod, animalMethod);
 
-let cat = animal("tilak nagar", 4);
-let dogName = animal("jhonny", "black");
+function createCat(location, noOfLegs, name, colorOfEyes) {
+  let obj = createAnimal(location, noOfLegs);
+  Object.setPrototypeOf(obj, catMethod);
+  obj.name = name;
+  obj.color = colorOfEyes;
+  return obj;
+}
+
+let catMethod = {
+  bark: function () {
+    alert(`I am a ${this.name} and I can bark`);
+  },
+  changeName: function (name) {
+    this.name = name;
+    return name;
+  },
+  changeColor: function (color) {
+    this.color = color;
+    return color;
+  },
+  summary: function () {
+    return `I am ${this.name} and I am of ${this.color} color. I can also bark`;
+  },
+};
+Object.setPrototypeOf(catMethod, animalMethod);
+
+let johhny = createDog("tilak nagar", 4, "Jhonny", "brown");
