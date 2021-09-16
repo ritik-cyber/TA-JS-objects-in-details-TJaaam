@@ -16,7 +16,7 @@ class Animal {
 }
 
 class Dog extends Animal {
-  constructor(name, color) {
+  constructor(location, name, noOfLegs, color) {
     super(location, noOfLegs);
     this.name = name;
     this.color = color;
