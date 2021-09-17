@@ -6,6 +6,9 @@
 
 function makePerson(name, age) {
   let obj = {};
+  obj.name = name;
+  obj.age = age;
+  return obj;
 }
 
 var vicky = makePerson("Vicky", 24);
@@ -21,7 +24,9 @@ var vicky = makePerson("Vicky", 24);
 /*** CHALLENGE 1 of 3 ***/
 
 var personStore = {
-  // add code here
+  greet() {
+    console.log("Hello");
+  },
 };
 
 // /********* Uncomment this line to test your work! *********/
@@ -30,7 +35,10 @@ var personStore = {
 /*** CHALLENGE 2 of 3 ***/
 
 function personFromPersonStore(name, age) {
-  // add code here
+  let obj = Object.create(personStore);
+  obj.name = name;
+  obj.age = age;
+  return obj;
 }
 
 var sandra = personFromPersonStore("Sandra", 26);
@@ -42,7 +50,9 @@ var sandra = personFromPersonStore("Sandra", 26);
 
 /*** CHALLENGE 3 of 3 ***/
 
-// add code here
+personStore.introduce = function () {
+  console.log(`Hello my name is ${this.name}`);
+};
 
 // sandra.introduce(); // -> Logs 'Hi, my name is Sandra'
 
@@ -53,7 +63,9 @@ var sandra = personFromPersonStore("Sandra", 26);
 /*** CHALLENGE 1 of 3 ***/
 
 function PersonConstructor() {
-  // add code here
+  this.greet = function () {
+    console.log("hello");
+  };
 }
 
 // /********* Uncomment this line to test your work! *********/
@@ -123,7 +135,7 @@ function userFactory(name, score) {
   return user;
 }
 
-var adminFunctionStore /* Put code here */;
+var adminFunctionStore = Object.create(userFunctionStore);
 
 function adminFactory(name, score) {
   // Put code here
