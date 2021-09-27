@@ -30,9 +30,16 @@ Getter
 #### Test
 
 ```js
+class stack {
+  constructor() {}
+  push;
+}
+```
+
+```js
 let myStack = new Stack();
-myStack.push('One');
-myStack.push('Two');
+myStack.push("One");
+myStack.push("Two");
 console.log(myStack.length); // 2
 console.log(myStack.peek()); // "Two"
 console.log(myStack.peek(0)); // "One"
@@ -68,9 +75,9 @@ Getter
 
 ```js
 let atmQueue = new Queue();
-atmQueue.enqueue('Aman');
-atmQueue.enqueue('John');
-atmQueue.enqueue('Rohan');
+atmQueue.enqueue("Aman");
+atmQueue.enqueue("John");
+atmQueue.enqueue("Rohan");
 console.log(atmQueue.displayQueue()); // "Aman John Rohan"
 console.log(atmQueue.length); // 3
 console.log(atmQueue.peek()); // "Aman"
